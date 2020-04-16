@@ -13,16 +13,21 @@ class App extends React.Component {
   state = { code: exampleCode }
 
 
-  onValueChange = code => {
+  onCodeChange = code => {
     this.setState({ code })
-    console.log("Value Change");
+    console.log("Value Change", this.state.code);
   }
 
-
+  onClickRun(){
+    console.log("Run Click");
+  }
+  onClickSubmit(){
+    console.log("Submit Click");
+  }
 
   render() {
   return (
-    <div className="App">
+    <div className="App"style = { {backgroundColor: '#d4edf5'}} >
       <div className="col-12" style = { {backgroundColor: '#b9a4a4'}}>
         <h1>CODER LEVEL</h1>
 
@@ -84,13 +89,13 @@ class App extends React.Component {
             theme="monokai"
             name="blah2"
             onLoad={this.onLoad}
-            onChange={this.onChange}
+            onChange={this.onCodeChange}
             fontSize={14}
             showPrintMargin={true}
             showGutter={true}
             highlightActiveLine={true}
             value={this.state.code}
-            width={"900px"}
+            width={"750px"}
             setOptions={{
             enableBasicAutocompletion: true,
             enableLiveAutocompletion: false,
@@ -99,8 +104,8 @@ class App extends React.Component {
             tabSize: 4,
           }}/>
           <br></br>
-          <button type="button" className="btn">Run Code</button>
-          <button type="button" className="btn btn-success">Submit Code</button>
+          <button type="button" className="btn btn-success" onClick= {this.onClickRun} >Run Code</button>
+          <button type="button" className="btn btn-primary" onClick = {this.onClickSubmit}>Submit Code</button>
         </div> 
       </div>
     </div>
