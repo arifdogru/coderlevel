@@ -10,7 +10,8 @@ import "ace-builds/src-noconflict/theme-github";
 const exampleCode = "import java.util.*";
  
 class App extends React.Component {
-  state = { code: exampleCode }
+  state = { code: exampleCode,
+      result:null }
 
 
   onCodeChange = code => {
@@ -19,9 +20,11 @@ class App extends React.Component {
   }
 
   onClickRun(){
+    alert("Run button not implemented yet");
     console.log("Run Click");
   }
   onClickSubmit(){
+    alert("Submit button not implemented yet");
     console.log("Submit Click");
   }
 
@@ -107,6 +110,9 @@ class App extends React.Component {
           <button type="button" className="btn btn-success" onClick= {this.onClickRun} >Run Code</button>
           <button type="button" className="btn btn-primary" onClick = {this.onClickSubmit}>Submit Code</button>
         </div> 
+      </div>
+      <div className="row" style = { {backgroundColor: '#c1c5c7'}}>
+        <p> Result :  </p> {this.state.result}
       </div>
     </div>
   ); }
